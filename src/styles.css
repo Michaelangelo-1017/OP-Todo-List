@@ -9,187 +9,110 @@
 :root {
     --yellow: #FFC60B;
     --green: #85AE85;
-    --light-blue: #0A95FF;
+    --light-blue: #dff1ff;
+    --less-light-blue: #9fd4fd;
+    --dark-cyan: #199bff;
     --dark-blue: #230AFF;
     --purple: #7766FF;
     --lilac: #AAA0FF;
     --dark-orange: #df880a;
     --chocolate: #c16a08;
     --khaki: #ffde73;
+    --delete-red: rgba(245, 150, 150, 0.3);
 }
 
 /*Type Styling*/
 body{
-    background-image: url(./heaven-background.png);
-    padding: 10px 20px;
-    height: 100vh;
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-header{
-    width: 100%;
+    flex-direction: row;
+    padding: 15px;
+    background-color: var(--light-blue);
+    gap: 30px;
 }
 
 /*ID Styling*/
-#nav-bar{
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-#content{
-    background-color: white;
-    border-radius: 12px;
-    height: calc(100% - 40px);
+#sidebar{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    gap: 15px;
-    width: 100%;
-    overflow-y: auto;
+    gap: 12px;
+    width: 20vw;
 }
 
-#divs-cont{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 15px;
-}
-
-#divs-cont-menu, #divs-cont-contact{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#divs-cont-contact{
-    align-items: center;
-}
-
-#divs-cont-menu h2{
-    font-size: 1.8em;
-}
-
-#divs-cont-menu div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-#divs-cont-menu p:first-of-type, #divs-cont-contact p{
-    font-family: "Edu NSW ACT Cursive", cursive;
-    font-weight: 400;
-}
-
-#divs-cont-contact span{
-    font-weight: 500;
-}
-
-#divs-cont-menu div p:last-of-type{
-    font-weight: 700;
-}
-#content h1{
-    font-size: 6.5vw;
-}
-
-/*Class Styling*/
-
-.info-cont, .food-item{
-    width: 100%;
-    background: linear-gradient(135deg,#FEC601 0%, #FFB400 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid var(--chocolate);
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.contact-item{
-    width: calc(100% - 40px);
-    background: linear-gradient(135deg,#FEC601 0%, #FFB400 100%);
-    border: 3px solid var(--chocolate);
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.info-cont p{
-    font-family: "Edu NSW ACT Cursive", cursive;
-    font-weight: 400;
-    font-size: 3vw;
-}
-
-.info-cont .reviewer{
-    font-weight: 700;
-}
-
-.nav-button{
-    color: var(--khaki);
-    font-size: 7vw;
-    background-color: #0A95FF00;
-    border: none;
-    font-weight: 700;
-}
-
-.contactP{
-    margin-top: 10px;
-    word-wrap: break-word;
-}
-
-.contact-title, .menu-title{
-    background: linear-gradient(135deg,#FEC601 0%, #FFB400 100%);
-    border: 3px solid var(--chocolate);
-    border-radius: 20px;
-    padding: 5px 10px;
-    margin-bottom: 40px;
-    width: 50%;
+#title{
+    color: var(--dark-cyan);
+    font-size: 2.5em;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-/*Other selectors*/
-.nav-button:hover{
-    background-color: var(--lilac);
-}
-@media screen and (max-width: 500px) {
-    .info-cont p, .info-cont h2{
-        font-size: 3vw;
-    }
-    #content h1{
-        font-size: 6.5vw;
-    }
+#priority-title{
+    font-size: 2em;
 }
 
-@media screen and (min-width: 740px) {
-    .info-cont p, .info-cont h2{
-        font-size: 2vw;
-    }
-    #content h1{
-        font-size: 3em;
-    }
+#priority-section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-@media screen and (min-width: 1080px) {
-    .info-cont p, .info-cont h2{
-        font-size: 1.7vw;
-    }
-    #content h1{
-        font-size: 3em;
-    }
+#default-project-btn{
+    width: 80%;
+    border-radius: 11px 0px 0px 11px;
 }
 
-@media screen and (min-width: 1344px) {
-    .info-cont p, .info-cont h2{
-        font-size: 1.5vw;
-    }
-    #content h1{
-        font-size: 3em;
-    }
+#all-priority-btn{
+    background-color: var(--less-light-blue);
+    border: 3px solid var(--dark-cyan);
+}
+/*Class Styling*/
+.task-buttons, .projects-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.priority-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
+.priority-buttons button{
+    background-color: white;
+    border: 2.5px solid var(--less-light-blue);
+    padding: 15px 10px;
+    border-radius: 11px;
+    font-size: 1.25em;
+    width: 100px;
+}
+
+.task-buttons button, .projects-buttons button{
+    background-color: white;
+    border: 2.5px solid var(--less-light-blue);
+    padding: 10px 5px 10px 20px;
+    border-radius: 11px;
+    text-align: left;
+    font-size: 1.25em;
+}
+
+.task-buttons button:hover, .projects-buttons button:hover, .priority-buttons button:hover{
+    transform: scale(1.05);
+    background-color: var(--light-blue);
+}
+
+.project-buttons{
+    display: flex;
+    align-items: center;
+}
+
+.trash-can-svg{
+    fill: black;
+    border: 2px solid red;
+    background-color: var(--delete-red);
+    border-radius: 0px 11px 11px 0px;
+    height: 45px;
+}
+
+.trash-can-svg:hover{
+    background-color: rgba(245, 150, 150, 0.7);
 }
