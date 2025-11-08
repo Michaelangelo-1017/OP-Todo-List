@@ -1,0 +1,73 @@
+/*ID Styling*/
+#default-project-btn{
+    width: 85%;
+    border-radius: 11px 0px 0px 11px;
+    border-right: none;
+}
+
+#all-priority-btn{
+    background-color: var(--less-light-blue);
+    border: 3px solid var(--dark-cyan);
+}
+
+/*Class Styling*/
+.priority-buttons button{
+    background-color: white;
+    border: 2.5px solid var(--less-light-blue);
+    padding: 15px 10px;
+    border-radius: 11px;
+    font-size: 1.25em;
+    width: 100px;
+}
+
+.task-buttons button, .projects-buttons button{
+    background-color: white;
+    border: 2.5px solid var(--less-light-blue);
+    padding: 10px 5px 10px 20px;
+    border-radius: 11px;
+    text-align: left;
+    font-size: 1.25em;
+}
+
+.task-buttons button:hover, .projects-buttons button:hover, .priority-buttons button:hover{
+    transform: scale(1.025);
+    background-color: var(--light-blue);
+}
+
+.trash-can-svg, .delete-svg{
+    fill: black;
+    height: 25px;
+}
+
+.delete-task-div{
+    border: 0.5px solid rgba(185, 177, 177, 0.3);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px;
+    border-radius: 7px;
+}
+
+.delete-task-div:hover{
+    background-color: var(--delete-hover-red);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px){
+    #default-project-btn{
+        width: 100%;
+        border-radius: 11px 11px 0px 0px;
+        border-bottom: none;
+        border-right: 2.5px solid var(--less-light-blue);
+    }
+    .task-buttons button, .projects-buttons button{
+        text-align: center;
+        padding: 10px 5px 10px 5px;
+        word-wrap: break-word;
+    }
+    .priority-buttons button{
+        padding: 10px;
+        width: 90px;
+    }
+}

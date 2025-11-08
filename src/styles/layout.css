@@ -1,0 +1,96 @@
+/*ID Styling*/
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 25%;
+}
+
+#title{
+    color: var(--dark-cyan);
+    font-size: 2.25em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#priority-title{
+    font-size: 2em;
+}
+
+#priority-section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#tasks-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 10px;
+}
+
+/*Class Styling*/
+.task-buttons, .projects-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.priority-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.project-buttons{
+    display: flex;
+    align-items: center;
+}
+
+.trash-cont{
+    border: 2px solid red;
+    border-left: none;
+    border-radius: 0px 11px 11px 0px;
+    background-color: var(--delete-red);
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trash-cont:hover{
+    background-color: rgba(245, 150, 150, 0.7);
+}
+
+.task-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid green;
+}
+
+@media screen and (max-width: 480px) {
+    #tasks-container{
+        grid-template-columns: 1fr;
+    }
+    .project-buttons{
+        flex-direction: column;
+    }
+    .trash-cont{
+        width: 100%;
+        border-radius: 0px 0px 11px 11px;
+        border-left: 2px solid red;
+    }
+    #sidebar{
+        width: 30%;
+    }
+    #content{
+        width: 50%;
+    }
+}
