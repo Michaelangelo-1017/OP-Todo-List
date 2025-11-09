@@ -1,29 +1,6 @@
-function loadDefaultTasks(){
-    const defaultTasks = [
-        {
-            title: "Coding Session",
-            priority: "high",
-            description: "Work on a project or follow tutorials to learn about a concept in full stack development.",
-            dueDate: "2025-09-16",
-            completed: false
-        },
-        {
-            title: "Morning Mantra",
-            priority: "medium",
-            description: "Say your 8 powerful words for the day in the morning after brushing your teeth.",
-            dueDate: "Today",
-            completed: true
-        },
-        {
-            title: "Play football",
-            priority: "low",
-            description: "Go and play football with your friends.",
-            dueDate: "2025-11-08",
-            completed: false
-        }
-    ];
+function loadTasks(tasksArr){
     const taskCont = document.getElementById("tasks-container");
-    defaultTasks.forEach((task)=>{
+    tasksArr.forEach((task)=>{
         const taskDiv = document.createElement("div");
         taskDiv.setAttribute("class","task-card");
         const taskLists = document.createElement("div");
@@ -51,7 +28,11 @@ function loadDefaultTasks(){
         deleteTaskDiv.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="delete-svg"><title>trash-can-outline</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"/></svg>`;
         taskDiv.append(taskLists,deleteTaskDiv);
         taskCont.appendChild(taskDiv);
+        
     })
+    return tasksArr;
 }
 
-export default loadDefaultTasks;
+
+
+export default loadTasks;
