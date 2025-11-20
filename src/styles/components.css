@@ -1,16 +1,5 @@
 /*ID Styling*/
-#default-project-btn{
-    width: 85%;
-    border-radius: 11px 0px 0px 11px;
-    border-right: none;
-}
-
-#all-priority-btn{
-    background-color: var(--less-light-blue);
-    border: 3px solid var(--dark-cyan);
-}
-
-#create-task-btn{
+#create-task-btn,#create-project-btn{
     background-color: white;
     border: 2px solid var(--dark-cyan);
     padding: 15px 12px;
@@ -19,26 +8,55 @@
     margin-top: 20px;
     font-size: 1.05em;
 }
+
+#new-project-btn{
+    border: 2.5px solid var(--less-light-blue);
+}
+
+#cancel-btn,#project-cancel-btn{
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    right: 0.5rem;
+    top: 0.6rem;
+    border: none;
+    font-size: large;
+    padding: 10px 13px;
+    border-radius: 50%;
+}
+
+#projects-title, #task-menu-title{
+    text-align: center;
+    color: var(--dark-cyan);
+}
+
+#title{
+    padding-right: 40px;
+}
+
 /*Class Styling*/
-.priority-buttons button{
+.task-button, .project-button, .priority-btn, #new-project-btn, #new-task-btn{
     background-color: white;
-    border: 2.5px solid var(--less-light-blue);
+    font-size: 1.25em;
+}
+
+.priority-btn{
     padding: 15px 10px;
-    border-radius: 11px;
-    font-size: 1.25em;
     width: 100px;
-}
-
-.task-buttons button, .projects-buttons button{
-    background-color: white;
-    border: 2.5px solid var(--less-light-blue);
-    padding: 10px 5px 10px 20px;
     border-radius: 11px;
-    text-align: left;
-    font-size: 1.25em;
+    border: 2.5px solid var(--less-light-blue);
 }
 
-.task-buttons button:hover, .projects-buttons button:hover, .priority-buttons button:hover{
+.task-button, .project-button, #new-project-btn, #new-task-btn{
+    padding: 10px 5px 10px 10px;
+    text-align: left;
+}
+
+.task-button, #new-task-btn{
+    border-radius: 11px;
+    border: 2.5px solid var(--less-light-blue);
+}
+
+.task-buttons button:hover, .projects-buttons button:hover, .priority-buttons button:hover, #new-project-btn:hover{
     transform: scale(1.025);
     background-color: var(--light-blue);
 }
@@ -58,9 +76,91 @@
     border-radius: 7px;
 }
 
+.project-button{
+    width: 85%;
+    border: 2.5px solid var(--less-light-blue);
+    border-radius: 11px 0px 0px 11px;
+    border-right: none;
+}
+
+.task-project-span{
+    font-weight: 700;
+}
+
+/* ham menu */
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+}
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #6F86FF;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: var(--dark-cyan);
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*Added Features Styles*/
+.selected-button{
+    background-color: var(--less-light-blue);
+    border: 3px solid var(--dark-cyan);
+}
+
+.completed-task{
+    background-color: rgba(137, 133, 133, 0.2);
+}
+
+/*Hover styles*/
+
+.task-buttons button:hover, .projects-buttons button:hover, .priority-buttons button:hover{
+    transform: scale(1.025);
+    background-color: var(--light-blue);
+}
+
 .delete-task-div:hover{
     background-color: var(--delete-hover-red);
     cursor: pointer;
+}
+
+#cancel-btn:hover,#project-cancel-btn:hover{
+    animation: rotate 0.3s ease-out 1;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*Animations*/
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
 }
 
 /*Responsiveness*/

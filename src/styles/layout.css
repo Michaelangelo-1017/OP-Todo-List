@@ -2,8 +2,16 @@
 #sidebar{
     display: flex;
     flex-direction: column;
+    position: fixed;
     gap: 12px;
-    width: 25%;
+    width: 100%;
+    background-color: white;
+    max-width: 40%;
+    top: 0;
+    right: -40%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 #title{
@@ -25,12 +33,13 @@
 
 #tasks-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,1fr);
     gap: 15px;
     padding: 10px;
+    width: 100%;
 }
 
-#modal{
+#modal, #project-modal{
     display: none;
     position: fixed;
     top: 0; left: 0;
@@ -40,21 +49,37 @@
     align-items: center;
 }
 
-#popup-form{
+#popup-form, #project-popup-form{
     font-size: 1.2em;
 }
 
-#popup-form input,#popup-form select{
+#popup-form input,#popup-form select, #project-popup-form input{
     height: 40px;
     font-size: 1rem;
     padding-left: 7px;
 }
 
+#completed-cont{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#taskProjectCont{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+#sidebar.active {
+    right: 0;
+}
 /*Class Styling*/
 .task-buttons, .projects-buttons{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 80%;
 }
 
 .priority-buttons{
@@ -92,10 +117,9 @@
     background-color: white;
     border-radius: 12px;
     padding: 20px;
-    border-left: 4px solid green;
 }
 
-.popup-container, #popup-form{
+.popup-container, #popup-form, #project-popup-form{
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -103,27 +127,40 @@
 
 .popup-container{
     background-color: var(--light-blue);
-    padding: 20px;
+    padding: 35px;
     border-radius: 13px;
+    position: relative;
 }
 
+/*Added Features Styles*/
+.low{
+    border-left: 4px solid green;
+}
+
+.medium{
+    border-left: 4px solid goldenrod;
+}
+
+.high{
+    border-left: 4px solid red;
+}
 
 @media screen and (max-width: 480px) {
     #tasks-container{
         grid-template-columns: 1fr;
     }
-    .project-buttons{
-        flex-direction: column;
-    }
-    .trash-cont{
-        width: 100%;
-        border-radius: 0px 0px 11px 11px;
-        border-left: 2px solid red;
-    }
-    #sidebar{
-        width: 30%;
-    }
-    #content{
-        width: 50%;
-    }
+
 }
+
+nav {
+    padding: 1rem;
+    display: flex;
+    position: absolute;
+    right: -5px;
+    top: 0;
+}
+
+nav:hover{
+    cursor: pointer;
+}
+

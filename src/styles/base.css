@@ -30,7 +30,7 @@ body{
     background-color: var(--light-blue);
     gap: 30px;
     font-family: "Noto Sans Mono", "Roboto", sans-serif;
-    min-width: 100vw;
+    min-width: 100%;
 }
 
 button:hover{
